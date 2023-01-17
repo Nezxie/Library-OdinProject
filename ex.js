@@ -26,7 +26,7 @@ window.onload = function(){
         }
 
     }
-    myLibrary.forEach(book => book.displayBook()); //this needs testing
+    myLibrary.forEach(book => book.displayBook()); //this needs testing but to lazy to hardtype some book obj into the array sorry
 }
 //library setup
 var myLibrary = [];
@@ -53,7 +53,7 @@ function Book(title,author,noPages,readState){
             const bookCardRead = document.createElement("p");
             const bookCardDelete = document.createElement("button");
             bookCardTitle.appendChild(document.createTextNode(this.title));
-            bookCardAuthor.appendChild(document.createTextNode(this.author));
+            bookCardAuthor.appendChild(document.createTextNode(this.author||"unknown"));
             bookCardPages.appendChild(document.createTextNode(this.noPages||"unknown"));
             bookCardRead.appendChild(document.createTextNode((this.readState?"read":"not read")));
             bookCardDelete.appendChild(document.createTextNode('Delete book'));
