@@ -54,10 +54,14 @@ function Book(title,author,noPages,readState){
             const bookCardDelete = document.createElement("button");
             bookCardTitle.appendChild(document.createTextNode(this.title));
             bookCardAuthor.appendChild(document.createTextNode(this.author));
-            bookCardPages.appendChild(document.createTextNode(this.noPages));
-            bookCardRead.appendChild(document.createTextNode(this.readState));
+            bookCardPages.appendChild(document.createTextNode(this.noPages||"unknown"));
+            bookCardRead.appendChild(document.createTextNode((this.readState?"read":"not read")));
             bookCardDelete.appendChild(document.createTextNode('Delete book'));
             bookCardDelete.classList.add("delete-button");
+            bookCardRead.classList.add("read-button");
+            if(this.readState){
+                bookCardRead.classList.add("read");
+            }
             bookCard.appendChild(bookCardTitle);
             bookCard.appendChild(bookCardAuthor);
             bookCard.appendChild(bookCardPages);
