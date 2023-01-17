@@ -146,3 +146,29 @@ input{
 #read{
     transform: scale(1.5);
 }
+@media (width<1300px){
+.add-book-section{
+    width:80vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:1fr 1fr 1fr ;
+
+}
+.library{
+    grid-template-columns: 1fr 1fr;
+}
+#read{
+    align-self: flex-start;
+}
+}
+@media (width<700px){
+    .add-book-section{
+        width:80vw;
+        grid-template-columns: 1fr    
+    }
+    .library{
+        grid-template-columns: 1fr
+    }
+    #read{
+        align-self: flex-start;
+    }
+}
